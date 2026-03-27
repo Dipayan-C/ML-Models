@@ -1,63 +1,93 @@
-# Machine Learning Models
+# Machine Learning Models (From Scratch)
 
 ## Overview
 
-This project implements core machine learning algorithms from scratch using NumPy, without relying on high-level libraries such as scikit-learn or TensorFlow.
+This project implements a selection of core machine learning algorithms from first principles using NumPy, without relying on high-level libraries such as scikit-learn or TensorFlow.
 
-The project covers three fundamental areas of machine learning:
+The aim is to develop a clear understanding of:
 
-* Regression (Linear Regression and Elastic Net)
-* Classification (Support Vector Machines)
-* Neural Networks (Multi-Layer Perceptron)
+* The mathematical foundations of common models
+* How optimisation algorithms are applied in practice
+* The behaviour of models across different types of data
 
-## Objectives
+The project covers three areas:
 
-* Understand the mathematical foundations of machine learning models
-* Implement optimisation techniques such as gradient descent
-* Evaluate model performance on real-world datasets
+* Regression
+* Classification
+* Neural Networks
+
+---
+
+## Project Scope
+
+The repository includes implementations of:
+
+* Linear Regression using maximum likelihood estimation
+* Elastic Net regularisation combining L1 and L2 penalties
+* Support Vector Machines (SVM) trained with stochastic gradient descent
+* Kernel methods, including radial and sigmoid kernels
+* A Multi-Layer Perceptron (MLP) with forward propagation
+* Experiments analysing the effect of learning rates on convergence
+
+---
 
 ## Datasets
 
-* **Abalone Dataset** – Predicting age from physical measurements
-* **Mushroom Dataset** – Classifying mushrooms as poisonous or edible
-* **Fashion Dataset** – Image-based classification task
+| Dataset  | Task            | Description                                  |
+| -------- | --------------- | -------------------------------------------- |
+| Abalone  | Regression      | Predicting age from physical measurements    |
+| Mushroom | Classification  | Classifying mushrooms as poisonous or edible |
+| Fashion  | Neural Networks | Image classification (28×28 pixel inputs)    |
+
+---
 
 ## Methods
 
 ### Regression
 
-* Linear regression using maximum likelihood estimation
-* Elastic Net regularisation combining L1 and L2 penalties
-* Cross-validation for hyperparameter tuning
+* Closed-form solution for linear regression
+* Elastic Net regularisation
+* Grid search with cross-validation for hyperparameter selection
 
-### Classification
+### Classification (SVM)
 
-* Linear Support Vector Machine (SVM)
-* Stochastic Gradient Descent (SGD) optimisation
-* Kernel methods (Radial and Sigmoid kernels)
+* Linear SVM formulation
+* Hinge loss optimisation
+* Stochastic Gradient Descent (SGD)
+* Kernelised SVM with radial and sigmoid kernels
 
 ### Neural Networks
 
 * Multi-layer perceptron (MLP)
 * ReLU activation functions
-* Exploration of learning rates and convergence behaviour
+* Glorot (Xavier) initialisation
+* Analysis of learning rate impact on training behaviour
+
+---
 
 ## Results
 
-* Linear regression showed limited performance on nonlinear data
+* Linear regression showed limited performance on non-linear relationships
 * Elastic Net improved generalisation through regularisation
-* SVM achieved strong classification accuracy on structured data
-* Neural network performance was highly sensitive to learning rate selection
+* The SVM achieved strong classification performance on structured data
+* Neural network behaviour was sensitive to the choice of learning rate
+* Larger learning rates improved convergence speed but could introduce instability
+
+---
 
 ## Project Structure
 
-```id="9rj1mv"
-├── data/
-├── notebooks/
-├── src/
+```
+ml-models/
+│
+├── data/          # Datasets used for training and testing
+├── notebooks/     # Main Jupyter Notebook implementation
+├── src/           # Optional modular Python scripts
 ├── requirements.txt
 └── README.md
 ```
+
+---
 
 ## How to Run
 
@@ -65,6 +95,7 @@ The project covers three fundamental areas of machine learning:
 
 ```bash
 git clone https://github.com/your-username/machine-learning-from-scratch.git
+cd machine-learning-from-scratch
 ```
 
 2. Install dependencies:
@@ -74,7 +105,13 @@ pip install -r requirements.txt
 ```
 
 3. Run the notebook:
-   Open `notebooks/ml_models.ipynb`
+   Open:
+
+```
+notebooks/MFDS_project.ipynb
+```
+
+---
 
 ## Technologies Used
 
@@ -83,13 +120,23 @@ pip install -r requirements.txt
 * pandas
 * matplotlib
 
+---
+
 ## Future Improvements
 
-* Implement full backpropagation for neural networks
-* Add more robust hyperparameter tuning
+* Implement full backpropagation for the neural network
+* Add standard evaluation metrics (precision, recall, F1-score)
 * Compare results with scikit-learn implementations
+* Improve modular structure using the `src/` directory
+
+---
 
 ## Author
 
 Dipayan Chowdhury
 
+---
+
+## Notes
+
+This project is intended as a learning-focused implementation to demonstrate understanding of core machine learning concepts rather than production-level performance.
