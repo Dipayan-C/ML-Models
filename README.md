@@ -1,4 +1,4 @@
-# Machine Learning Models (From Scratch)
+# Machine Learning Models
 
 ## Overview
 
